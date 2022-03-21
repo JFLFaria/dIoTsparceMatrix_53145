@@ -1,7 +1,9 @@
 # (int, int)
 def position_create(row, col):
-    print("hello")
-    return False
+    if isinstance(row, int) and isinstance(col, int) and row > 0 and col > 0:
+        return row, col
+    else:
+        raise Exception("position_create: invalid arguments")
 
 
 # (position)
