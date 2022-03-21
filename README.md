@@ -1,3 +1,3 @@
 # dIoTsparceMatrix
 
-This a FCT Nova DTST exercice
+This a FCT Nova DTST exercise
