@@ -1,5 +1,6 @@
 # (int, int)
 def position_create(row, col):
+    print("hello")
     return False
 
 
