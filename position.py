@@ -9,7 +9,7 @@ def position_create(row: int, col: int) -> position:
 
 # Tests if position is valid
 def position_is(pos) -> bool:
-    if type(pos) is tuple:
+    if type(pos) is tuple and len(pos) == 2 and type(pos[0]) is int and type(pos[1]) is int:
         return True
     else:
         return False
