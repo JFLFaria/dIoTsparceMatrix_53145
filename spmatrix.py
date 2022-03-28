@@ -20,22 +20,34 @@ def spmatrix_is(mat):
 
 # (spmatrix)
 def spmatrix_zero_get(mat):
-    return False
+    if spmatrix_is(mat):
+        return mat[0]
+    else:
+        raise ValueError("spmatrix_zero_get: invalid arguments")
 
 
 # (spmatrix, float)
 def spmatrix_zero_set(mat, zero):
-    return False
+    if spmatrix_is(mat) and type(zero) is float:
+        mat[0] = zero
+        for key in mat[1].keys():
+            if mat[1][key] == zero:
+                del mat[1][key]
+    else:
+        raise ValueError("spmatrix_zero_set: invalid arguments")
 
 
-# (spmatrix, float)
+# (spmatrix, position)
 def spmatrix_value_get(mat, pos):
-    return False
+    if spmatrix_is(mat) and type(pos) is tuple:
+        return mat[1][pos]
+    else:
+        raise ValueError("spmatrix_value_get: invalid arguments")
 
 
 # (spmatrix, position, float)
 def spmatrix_value_set(mat, pos, val):
-    return False
+    return False  # TODO: Continue
 
 
 # (spmatrix)
