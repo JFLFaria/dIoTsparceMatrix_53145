@@ -1,6 +1,13 @@
+from position import *
+
+dok = {}
+
+
 # (float)
-def spmatrix_create(zero=0):
-    return False
+def spmatrix_create(zero: float = 0.0):
+    if not (type(zero) is float):
+        raise ValueError('position_create: invalid arguments')
+    return [zero, dok]
 
 
 # (spmatrix)
