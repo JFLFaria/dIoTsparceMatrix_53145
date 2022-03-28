@@ -7,12 +7,15 @@ dok = {}
 def spmatrix_create(zero: float = 0.0):
     if not (type(zero) is float):
         raise ValueError('position_create: invalid arguments')
-    return [zero, dok]
+    return zero, dok
 
 
 # (spmatrix)
 def spmatrix_is(mat):
-    return False
+    if type(mat) is tuple and type(mat[0]) is float and type[1] is dict:
+        return True
+    else:
+        return False
 
 
 # (spmatrix)
