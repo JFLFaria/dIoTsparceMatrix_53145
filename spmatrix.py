@@ -1,5 +1,5 @@
 # (float)
-def spmatrix_create(zero):
+def spmatrix_create(zero=0):
     return False
 
 
@@ -61,4 +61,3 @@ def spmatrix_col(mat):
 # (spmatrix)
 def spmatrix_diagonal(mat):
     return False
-
