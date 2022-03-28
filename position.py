@@ -9,7 +9,7 @@ def position_create(row: int, col: int) -> position:
 
 # Tests if position is valid
 def position_is(pos) -> bool:
-    if type(pos) is position:
+    if type(pos) is tuple:
         return True
     else:
         return False
@@ -34,12 +34,14 @@ def position_equal(pos1, pos2) -> bool:
     if position_is(pos1) and position_is(pos2):
         if pos1 == pos2:
             return True
+        else:
+            return False
     else:
         raise ValueError("position_equal: invalid arguments")
 
 
 def position_str(pos) -> str:
     if position_is(pos):
-        return "(" + pos[0] + ", " + pos[1] + ")"
+        return "(" + str(pos[0]) + ", " + str(pos[1]) + ")"
     else:
         raise ValueError("position_str: invalid arguments")
