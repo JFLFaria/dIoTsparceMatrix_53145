@@ -41,7 +41,7 @@ def spmatrix_zero_set(mat, zero):
 # (spmatrix, position)
 def spmatrix_value_get(mat, pos):
     if spmatrix_is(mat) and type(pos) is tuple:
-        return mat[1][pos]
+        return mat[1].get(pos, 0.0)
     else:
         raise ValueError("spmatrix_value_get: invalid arguments")
 
@@ -93,23 +93,46 @@ def spmatrix_sparsity(mat):
 
 
 # (spmatrix)
-def spmatrix_str(mat):
+def spmatrix_str(mat, format):
+    response = ""
     if spmatrix_is(mat):
-        mat[1]  # TODO: Tirar duvida (ordenar as posições?)
+        dimension = spmatrix_dim(mat)
+        if dimension:
+            row_L = position_row(dimension[0])
+            col_L = position_col(dimension[0])
+            row_H = position_row(dimension[1])
+            col_H = position_col(dimension[1])
+
+            for row in range(row_L, row_H + 1):
+                for col in range(col_L, col_H + 1):
+                    response += format.format(spmatrix_value_get(mat, position_create(row,
+                                                                                      col)))
+        return response
     else:
         raise ValueError("spmatrix_str: invalid arguments")
 
 
 # (spmatrix)
-def spmatrix_row(mat):
+def spmatrix_row(mat, row):
+    response = ""
     if spmatrix_is(mat):
-        mat[1]  # TODO: Tirar duvida
+        dimension = spmatrix_dim(mat)
+        if dimension:
+            row_L = position_row(dimension[0])
+            col_L = position_col(dimension[0])
+            row_H = position_row(dimension[1])
+            col_H = position_col(dimension[1])
+
+            for col in range(col_L, col_H + 1):
+                response += format.format(spmatrix_value_get(mat, position_create(row,
+                                                                                  col)))
+        return response
     else:
         raise ValueError("spmatrix_row: invalid arguments")
 
 
 # (spmatrix)
-def spmatrix_col(mat):
+def spmatrix_col(mat, col):
     if spmatrix_is(mat):
         mat[1]  # TODO: Tirar duvida
     else:
