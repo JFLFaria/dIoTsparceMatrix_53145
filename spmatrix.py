@@ -84,7 +84,8 @@ def spmatrix_sparsity(mat):
     if spmatrix_is(mat):
         dimension = spmatrix_dim(mat)
         if dimension:
-            return len(mat[1]) / (dimension[0] * dimension[1])
+            return len(mat[1]) / ((position_row(dimension[1]) - position_row(dimension[0])) * (
+                    position_col(dimension[1]) - position_col(dimension[0])))
         else:
             return 0.0
     else:
