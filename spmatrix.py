@@ -82,7 +82,11 @@ def spmatrix_dim(mat):
 # (spmatrix)
 def spmatrix_sparsity(mat):
     if spmatrix_is(mat):
-        return len(mat[1]) / spmatrix_dim(mat)
+        dimension = spmatrix_dim(mat)
+        if dimension:
+            return len(mat[1]) / (dimension[0] * dimension[1])
+        else:
+            return 0.0
     else:
         raise ValueError("spmatrix_sparsity: invalid arguments")
 
