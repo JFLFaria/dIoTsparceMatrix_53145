@@ -25,6 +25,8 @@ pytest_position_priv.py::test_position_21 PASSED                         [ 91%]
 pytest_position_priv.py::test_position_22 PASSED                         [ 95%]
 pytest_position_priv.py::test_position_23 PASSED                         [100%]
 
+=================================== FAILURES ===================================
+/home/dtsd/DTSD/pytest_position_priv.py:31: assert True is False
 ============================== slowest durations ===============================
 
 (69 durations < 1s hidden.  Use -vv to show these durations.)

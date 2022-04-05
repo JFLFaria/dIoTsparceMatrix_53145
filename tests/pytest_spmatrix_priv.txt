@@ -48,6 +48,26 @@ pytest_spmatrix_priv.py::test_spmatrix_44 FAILED                         [ 95%]
 pytest_spmatrix_priv.py::test_spmatrix_45 PASSED                         [ 97%]
 pytest_spmatrix_priv.py::test_spmatrix_46 FAILED                         [100%]
 
+=================================== FAILURES ===================================
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:16: IndexError: tuple index out of range
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:69: AssertionError: assert 'position_cre...lid arguments' == 'spmatrix_cre...lid arguments'
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:76: AssertionError: assert 'position_cre...lid arguments' == 'spmatrix_cre...lid arguments'
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:83: AssertionError: assert 'position_cre...lid arguments' == 'spmatrix_cre...lid arguments'
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:90: AssertionError: assert 'position_cre...lid arguments' == 'spmatrix_cre...lid arguments'
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:148: assert ((10000000, 1...00, 10000000)) == ()
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:16: IndexError: tuple index out of range
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:87: ZeroDivisionError: division by zero
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:182: assert 2.00000040000006e-14 == 2e-14
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:207: assert 0.13333333333333333 == (1 / 12)
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:33: TypeError: 'tuple' object does not support item assignment
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:229: AssertionError: assert '%.2f%.2f%.2f%.2f%.2f%.2f' == '2.50 0.00 0.....00 0.00 5.20'
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:236: AssertionError: assert '%.2f%.2f%.2f%.2f%.2f%.2f' == '2.50 0.00 0.....00 0.00 5.20'
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:243: AssertionError: assert '%.3f%.3f%.3f%.3f%.3f%.3f' == '2.500 0.000 ...0 0.000 5.200'
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:54: ValueError: spmatrix_value_set: invalid arguments
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:46: ValueError: spmatrix_value_get: invalid arguments
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:10: ValueError: position_create: invalid arguments
+/home/dtsd/DTSD/pytest_spmatrix_priv.py:294: assert None
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:54: ValueError: spmatrix_value_set: invalid arguments
 ============================== slowest durations ===============================
 
 (138 durations < 1s hidden.  Use -vv to show these durations.)

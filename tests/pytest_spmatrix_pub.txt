@@ -1,28 +1,41 @@
 ============================= test session starts ==============================
-collecting ... collected 20 items
+collecting ... collected 21 items
 
-pytest_spmatrix_pub.py::test_spmatrix_create_with_zero_as_default PASSED [  5%]
-pytest_spmatrix_pub.py::test_spmatrix_create_with_zero_as_1_0 PASSED     [ 10%]
-pytest_spmatrix_pub.py::test_spmatrix_is_of_empty_matrix PASSED          [ 15%]
-pytest_spmatrix_pub.py::test_spmatrix_is_of_non_matrix_float_1 PASSED    [ 20%]
-pytest_spmatrix_pub.py::test_spmatrix_get_of_empty_matrix_with_zero_as_default PASSED [ 25%]
-pytest_spmatrix_pub.py::test_spmatrix_get_of_empty_matrix_with_zero_as_2 FAILED [ 30%]
-pytest_spmatrix_pub.py::test_spmatrix_copy_of_empty_matrix_with_zero_as_2 FAILED [ 35%]
-pytest_spmatrix_pub.py::test_spmatrix_is_after_spmatrix_copy_after_spmatrix_create FAILED [ 40%]
-pytest_spmatrix_pub.py::test_spmatrix_value_set_and_spmatrix_value_get PASSED [ 45%]
-pytest_spmatrix_pub.py::test_spmatrix_value_get_after_replacing_value_with_spmatrix_value_get PASSED [ 50%]
-pytest_spmatrix_pub.py::test_spmatrix_dim_of_empty_matrix PASSED         [ 55%]
-pytest_spmatrix_pub.py::test_spmatrix_dim_of_matrix_with_one_element FAILED [ 60%]
-pytest_spmatrix_pub.py::test_spmatrix_sparsity_of_m2x2_diagonal_matrix FAILED [ 65%]
-pytest_spmatrix_pub.py::test_spmatrix_sparsity_of_matrix_with_1_element_after_element_removal_using_spmatrix_zero_set FAILED [ 70%]
-pytest_spmatrix_pub.py::test_spmatrix_row_m2x2_diagonal FAILED           [ 75%]
-pytest_spmatrix_pub.py::test_spmatrix_col_m2x2_diagonal FAILED           [ 80%]
-pytest_spmatrix_pub.py::test_spmatrix_diagonal_m2x2_diagonal_zero FAILED [ 85%]
-pytest_spmatrix_pub.py::test_spmatrix_diagonal_m2x2_anti_diagonal_zero FAILED [ 90%]
-pytest_spmatrix_pub.py::test_spmatrix_15 FAILED                          [ 95%]
-pytest_spmatrix_pub.py::test_spmatrix_19 PASSED                          [100%]
+pytest_spmatrix_pub.py::test_spmatrix_create_with_zero_as_default PASSED [  4%]
+pytest_spmatrix_pub.py::test_spmatrix_create_with_zero_as_1_0 PASSED     [  9%]
+pytest_spmatrix_pub.py::test_spmatrix_is_of_empty_matrix PASSED          [ 14%]
+pytest_spmatrix_pub.py::test_spmatrix_is_of_non_matrix_float_1 PASSED    [ 19%]
+pytest_spmatrix_pub.py::test_spmatrix_get_of_empty_matrix_with_zero_as_default PASSED [ 23%]
+pytest_spmatrix_pub.py::test_spmatrix_get_of_empty_matrix_with_zero_as_2 FAILED [ 28%]
+pytest_spmatrix_pub.py::test_spmatrix_copy_of_empty_matrix_with_zero_as_2 FAILED [ 33%]
+pytest_spmatrix_pub.py::test_spmatrix_is_after_spmatrix_copy_after_spmatrix_create FAILED [ 38%]
+pytest_spmatrix_pub.py::test_spmatrix_value_set_and_spmatrix_value_get PASSED [ 42%]
+pytest_spmatrix_pub.py::test_spmatrix_value_get_after_replacing_value_with_spmatrix_value_get PASSED [ 47%]
+pytest_spmatrix_pub.py::test_spmatrix_dim_of_empty_matrix PASSED         [ 52%]
+pytest_spmatrix_pub.py::test_spmatrix_dim_of_matrix_with_one_element FAILED [ 57%]
+pytest_spmatrix_pub.py::test_spmatrix_sparsity_of_m2x2_diagonal_matrix FAILED [ 61%]
+pytest_spmatrix_pub.py::test_spmatrix_sparsity_of_matrix_with_1_element_after_element_removal_using_spmatrix_zero_set FAILED [ 66%]
+pytest_spmatrix_pub.py::test_spmatrix_row_m2x2_diagonal FAILED           [ 71%]
+pytest_spmatrix_pub.py::test_spmatrix_col_m2x2_diagonal FAILED           [ 76%]
+pytest_spmatrix_pub.py::test_spmatrix_diagonal_m2x2_diagonal_zero FAILED [ 80%]
+pytest_spmatrix_pub.py::test_spmatrix_diagonal_m2x2_anti_diagonal_zero FAILED [ 85%]
+pytest_spmatrix_pub.py::test_spmatrix_15 FAILED                          [ 90%]
+pytest_spmatrix_pub.py::test_spmatrix_19 PASSED                          [ 95%]
+pytest_spmatrix_pub.py::test_spmatrix_34 PASSED                          [100%]
 
+=================================== FAILURES ===================================
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:10: ValueError: position_create: invalid arguments
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:10: ValueError: position_create: invalid arguments
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:16: IndexError: tuple index out of range
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:54: ValueError: spmatrix_value_set: invalid arguments
+/home/dtsd/DTSD/pytest_spmatrix_pub.py:76: assert 2.0 == 0.5
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:33: TypeError: 'tuple' object does not support item assignment
+/home/dtsd/DTSD/dIoTsparceMatrix_53145/spmatrix.py:127: AttributeError: 'builtin_function_or_method' object has no attribute 'format'
+/home/dtsd/DTSD/pytest_spmatrix_pub.py:109: assert None == (0.0, {(2, 2): 5.0})
+/home/dtsd/DTSD/pytest_spmatrix_pub.py:116: assert None == (0.0, {(1, 1): 12.5, (2, 2): 5.0})
+/home/dtsd/DTSD/pytest_spmatrix_pub.py:124: assert None == (0.0, {})
+/home/dtsd/DTSD/pytest_spmatrix_pub.py:131: AssertionError: assert 'position_cre...lid arguments' == 'spmatrix_cre...lid arguments'
 ============================== slowest durations ===============================
 
-(60 durations < 1s hidden.  Use -vv to show these durations.)
-========================= 11 failed, 9 passed in 0.02s =========================
+(63 durations < 1s hidden.  Use -vv to show these durations.)
+======================== 11 failed, 10 passed in 0.02s =========================
