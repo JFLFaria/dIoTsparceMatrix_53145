@@ -87,7 +87,7 @@ def spmatrix_sparsity(mat):
             return len(mat[1]) / ((position_row(dimension[1]) - position_row(dimension[0])) * (
                     position_col(dimension[1]) - position_col(dimension[0])))
         else:
-            return 0.0
+            return 1.0
     else:
         raise ValueError("spmatrix_sparsity: invalid arguments")
 
