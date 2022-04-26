@@ -1,3 +1,5 @@
+from setuptools._distutils.spawn import spawn
+
 from position import *
 from copy import deepcopy
 
@@ -113,18 +115,19 @@ def spmatrix_str(mat, format):
 
 
 # (spmatrix)
-def spmatrix_row(mat, row):  # TODO: correct the return of the function
-    response = ""
+def spmatrix_row(mat, row):
     if spmatrix_is(mat):
+        new_mat = spmatrix_create(spmatrix_zero_get(mat))
         dimension = spmatrix_dim(mat)
         if dimension:
-            col_L = position_col(dimension[0])
-            col_H = position_col(dimension[1])
+            col_l = position_col(dimension[0])
+            col_h = position_col(dimension[1])
 
-            for col in range(col_L, col_H + 1):
-                response += format.format(spmatrix_value_get(mat, position_create(row,
-                                                                                  col)))
-        return response
+            for col in range(col_l, col_h + 1):
+                pos = position_create(row, col)
+                spmatrix_value_set(new_mat, pos, spmatrix_value_get(pos))
+
+        return new_mat
     else:
         raise ValueError("spmatrix_row: invalid arguments")
 
