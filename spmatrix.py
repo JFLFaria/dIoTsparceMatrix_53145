@@ -1,5 +1,3 @@
-from setuptools._distutils.spawn import spawn
-
 from position import *
 from copy import deepcopy
 
