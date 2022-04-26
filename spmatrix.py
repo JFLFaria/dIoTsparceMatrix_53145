@@ -32,7 +32,7 @@ def spmatrix_zero_get(mat):
 def spmatrix_zero_set(mat, zero):
     if spmatrix_is(mat) and (type(zero) is float or type(zero) is int):
         mat[0] = float(zero)
-        for key in mat[1].copy.keys():
+        for key in mat[1].copy():
             if mat[1][key] == float(zero):
                 del mat[1][key]
     else:
