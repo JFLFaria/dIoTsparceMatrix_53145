@@ -1,4 +1,5 @@
 from position import *
+from copy import deepcopy
 
 
 # dok = {}
@@ -57,8 +58,7 @@ def spmatrix_value_set(mat, pos, val):
 # (spmatrix)
 def spmatrix_copy(mat):
     if spmatrix_is(mat):
-        new_mat = ()
-        # TODO: Copy the elements now
+        new_mat = deepcopy(mat)
         return new_mat
     else:
         raise ValueError("spmatrix_copy: invalid arguments")
@@ -113,14 +113,12 @@ def spmatrix_str(mat, format):
 
 
 # (spmatrix)
-def spmatrix_row(mat, row):
+def spmatrix_row(mat, row):  # TODO: correct the return of the function
     response = ""
     if spmatrix_is(mat):
         dimension = spmatrix_dim(mat)
         if dimension:
-            row_L = position_row(dimension[0])
             col_L = position_col(dimension[0])
-            row_H = position_row(dimension[1])
             col_H = position_col(dimension[1])
 
             for col in range(col_L, col_H + 1):
