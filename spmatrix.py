@@ -98,13 +98,13 @@ def spmatrix_str(mat, format):
     if spmatrix_is(mat):
         dimension = spmatrix_dim(mat)
         if dimension:
-            row_L = position_row(dimension[0])
-            col_L = position_col(dimension[0])
-            row_H = position_row(dimension[1])
-            col_H = position_col(dimension[1])
+            row_l = position_row(dimension[0])
+            col_l = position_col(dimension[0])
+            row_h = position_row(dimension[1])
+            col_h = position_col(dimension[1])
 
-            for row in range(row_L, row_H + 1):
-                for col in range(col_L, col_H + 1):
+            for row in range(row_l, row_h + 1):
+                for col in range(col_l, col_h + 1):
                     response += format.format(spmatrix_value_get(mat, position_create(row,
                                                                                       col)))
         return response
@@ -123,7 +123,7 @@ def spmatrix_row(mat, row):
 
             for col in range(col_l, col_h + 1):
                 pos = position_create(row, col)
-                spmatrix_value_set(new_mat, pos, spmatrix_value_get(pos))
+                spmatrix_value_set(new_mat, pos, spmatrix_value_get(mat, pos))
 
         return new_mat
     else:
@@ -141,7 +141,7 @@ def spmatrix_col(mat, col):
 
             for row in range(row_l, row_h + 1):
                 pos = position_create(row, col)
-                spmatrix_value_set(new_mat, pos, spmatrix_value_get(pos))
+                spmatrix_value_set(new_mat, pos, spmatrix_value_get(mat, pos))
 
         return new_mat
     else:
@@ -164,7 +164,7 @@ def spmatrix_diagonal(mat):
 
             for row, col in zip(range(row_l, row_h + 1), range(col_l, col_h + 1)):
                 pos = position_create(row, col)
-                spmatrix_value_set(new_mat, pos, spmatrix_value_get(pos))
+                spmatrix_value_set(new_mat, pos, spmatrix_value_get(mat, pos))
 
         return new_mat
     else:
