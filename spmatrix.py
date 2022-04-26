@@ -7,9 +7,9 @@ from copy import deepcopy
 
 # (float)
 def spmatrix_create(zero: float = 0.0):
-    if not (type(zero) is float):
+    if not (type(zero) is float or type(zero) is int):
         raise ValueError('position_create: invalid arguments')
-    return zero, {}
+    return float(zero), {}
 
 
 # (spmatrix)
@@ -30,10 +30,10 @@ def spmatrix_zero_get(mat):
 
 # (spmatrix, float)
 def spmatrix_zero_set(mat, zero):
-    if spmatrix_is(mat) and type(zero) is float:
-        mat[0] = zero
+    if spmatrix_is(mat) and (type(zero) is float or type(zero) is int):
+        mat[0] = float(zero)
         for key in mat[1].keys():
-            if mat[1][key] == zero:
+            if mat[1][key] == float(zero):
                 del mat[1][key]
     else:
         raise ValueError("spmatrix_zero_set: invalid arguments")
@@ -49,8 +49,8 @@ def spmatrix_value_get(mat, pos):
 
 # (spmatrix, position, float)
 def spmatrix_value_set(mat, pos, val):
-    if spmatrix_is(mat) and type(pos) is tuple and type(val) is float:
-        mat[1][pos] = val
+    if spmatrix_is(mat) and type(pos) is tuple and (type(val) is float or type(val) is int):
+        mat[1][pos] = float(val)
     else:
         raise ValueError("spmatrix_value_set: invalid arguments")
 
