@@ -135,7 +135,17 @@ def spmatrix_row(mat, row):
 # (spmatrix)
 def spmatrix_col(mat, col):
     if spmatrix_is(mat):
-        mat[1]  # TODO: Tirar duvida
+        new_mat = spmatrix_create(spmatrix_zero_get(mat))
+        dimension = spmatrix_dim(mat)
+        if dimension:
+            row_l = position_row(dimension[0])
+            row_h = position_row(dimension[1])
+
+            for row in range(row_l, row_h + 1):
+                pos = position_create(row, col)
+                spmatrix_value_set(new_mat, pos, spmatrix_value_get(pos))
+
+        return new_mat
     else:
         raise ValueError("spmatrix_col: invalid arguments")
 
