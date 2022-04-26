@@ -9,12 +9,12 @@ from copy import deepcopy
 def spmatrix_create(zero: float = 0.0):
     if not (type(zero) is float or type(zero) is int):
         raise ValueError('position_create: invalid arguments')
-    return float(zero), {}
+    return [float(zero), {}]
 
 
 # (spmatrix)
 def spmatrix_is(mat):
-    if type(mat) is tuple and type(mat[0]) is float and type(mat[1]) is dict:
+    if type(mat) is list and type(mat[0]) is float and type(mat[1]) is dict:
         return True
     else:
         return False
