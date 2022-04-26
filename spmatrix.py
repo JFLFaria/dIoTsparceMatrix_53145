@@ -153,6 +153,21 @@ def spmatrix_col(mat, col):
 # (spmatrix)
 def spmatrix_diagonal(mat):
     if spmatrix_is(mat):
-        mat[1]  # TODO: Tirar duvida
+        new_mat = spmatrix_create(spmatrix_zero_get(mat))
+        dimension = spmatrix_dim(mat)
+        if dimension:
+            row_l = position_row(dimension[0])
+            row_h = position_row(dimension[1])
+            col_l = position_col(dimension[0])
+            col_h = position_col(dimension[1])
+
+            if (row_h - row_l) - (col_h - col_l) != 0:
+                raise ValueError("spmatrix_diagonal: matrix not square")
+
+            for row, col in zip(range(row_l, row_h + 1), range(col_l, col_h + 1)):
+                pos = position_create(row, col)
+                spmatrix_value_set(new_mat, pos, spmatrix_value_get(pos))
+
+        return new_mat
     else:
         raise ValueError("spmatrix_diagonal: invalid arguments")
