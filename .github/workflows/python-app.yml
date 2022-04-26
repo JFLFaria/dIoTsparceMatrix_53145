@@ -42,4 +42,4 @@ jobs:
         pytest spmatrixTest.py
     - name: Test with directoru
       run: |
-        pytest tests/
+        pytest tests/pytest_position_priv.py
