@@ -36,5 +36,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest tests/position_different.py
         pytest tests/pytest_position_priv.py
+        pytest tests/pytest_position_pub.py
+        pytest tests/pytest_spmatrix_priv.py
+        pytest tests/pytest_spmatrix_pub.py
+        
